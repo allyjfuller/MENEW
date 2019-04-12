@@ -8,7 +8,7 @@ const dummyReducer = (state = initialState, action) => {
 
 		return {
 			...state,
-			data: ...state.data
+			data: [...state.data, action.newItem]
 		}
 
 		default:
