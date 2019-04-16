@@ -1,7 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {clearAuth} from '../actions/auth';
-import {clearAuthToken} from '../local-storage';
+import { connect } from 'react-redux';
+import { clearAuth } from '../actions/auth';
+import { clearAuthToken } from '../local-storage';
+
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -19,7 +20,6 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar">
-                <h1>MENEW</h1>
                 {logOutButton}
             </div>
         );
