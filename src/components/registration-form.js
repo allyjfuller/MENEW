@@ -2,6 +2,8 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
+import Cuisine from './cuisine';
+import Checkbox from './checkbox';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 const passwordLength = length({min: 8, max: 25});
@@ -9,11 +11,11 @@ const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
+        const {email, password, establishmentName} = values;
+        const user = {email, password, establishmentName};
         return this.props
             .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(login(username, password)));
+            .then(() => this.props.dispatch(login(email, password)));
     }
 
     render() {
@@ -23,10 +25,12 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="establishmentName">Name of Bar or Restaurant</label>
+                <label>I am a:</label>
+                <Field component={Checkbox} type="checkbox" name="establishmentType" validate={[required, nonEmpty]} />
+                <label htmlFor="establishmentName">Name of establishment</label>
                 <Field component={Input} type="text" name="establishmentName" />
                 <label htmlFor="cuisine">Cuisine</label>
-                <Field component={Input} type="text" name="cuisine" />
+                <Field component={Cuisine} type="select" name="cuisine" />
                 <label htmlFor="email">Email</label>
                 <Field
                     component={Input}

@@ -6,6 +6,7 @@ import { store } from '../store';
 import { Provider } from 'react-redux';
 
 class Modal extends Component {
+
 	componentDidMount() {
 		this.modalTarget = document.createElement('div');
 		this.modalTarget.className = 'modal';
