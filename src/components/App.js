@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import HeaderBar from './header-bar';
 import TopNav from './top-nav';
-import {refreshAuthToken} from '../actions/auth';
+import { refreshAuthToken } from '../actions/auth';
 
 export class App extends React.Component {
     componentDidUpdate(prevProps) {

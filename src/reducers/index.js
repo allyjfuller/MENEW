@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
-import dummyReducer from './dummy-reducer'
+import { reducer as modal } from 'react-redux-modal-flex'
+
 
 const rootReducer = combineReducers({
 	

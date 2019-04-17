@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginForm from './login-form';
+import LoginPage from './login-page';
 import LandingPage from './landing-page';
 import RegistrationPage from './registration-page';
 import About from './about';
@@ -32,55 +32,13 @@ export function TopNav(props) {
 <Route exact path="/" component={ LandingPage } />
 <Route path="/about" component={ About } />
 <Route path="/register" component={ RegistrationPage } />
-<Route path="/login" component={ LoginForm } />
+<Route path="/login" component={ LoginPage } />
 <Route path="/contact" component={ Contact } />
 </Router>
 
 
 		);
 }
-
-/*
-function home() {
-	return (
-		<div>
-			<LandingPage />
-		</div>
-	);
-}
-
-function about() {
-	return (
-		<div>
-			<h2>WHO WE ARE</h2>
-		</div>
-	);
-}
-
-function login() {
-	return (
-		<div>
-			<LoginForm />
-		</div>
-	);
-}
-
-function register() {
-	return (
-		<div>
-			<RegistrationPage />
-		</div>
-	);
-}
-
-function contact() {
-	return (
-		<div>
-			<h2>CONTACT</h2>
-		</div>
-	);
-}
-*/
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
