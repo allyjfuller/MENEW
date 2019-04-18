@@ -6,15 +6,16 @@ import About from './about';
 import Contact from './contact';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import logo from './img/logo.png';
+import logoWhite from './img/logoWhite.png';
+import './top-nav.css';
 
 export function TopNav(props) {
 	return (
 
 <Router>
 		<nav>
+		<Link to="/" className="logo"><img src={ logoWhite } alt="Logo" className="logo" /></Link>
 			<ul>
-				<Link to="/" className="home"><img src={ logo } alt="Logo" id="logo" /></Link>
 				<li>
 				<Link to="/about" className="about">WHO WE ARE</Link>
 				</li>

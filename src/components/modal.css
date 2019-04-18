@@ -2,12 +2,13 @@
 /*.left {
 	z-index: 3;
 }
-*/
+
 
 .right {
 	position: relative;
 	z-index: 1;
 }
+*/
 
 body .modal {
 	position: fixed;

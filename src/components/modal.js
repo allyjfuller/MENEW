@@ -6,7 +6,6 @@ import { store } from '../store';
 import { Provider } from 'react-redux';
 
 class Modal extends Component {
-
 // whenever component gets rendered to the screen we create a new div assigned to this.modalTarget
 	componentDidMount() {
 		this.modalTarget = document.createElement('div');
@@ -39,7 +38,9 @@ class Modal extends Component {
 		ReactDOM.render(
 			<Provider store= {store}>
 				<Router>
-				<div>{this.props.children}</div>
+					<div>
+						{this.props.children}
+					</div>
 				</Router>
 			</Provider>,
 			this.modalTarget
@@ -59,3 +60,4 @@ export default Modal;
 // I append it to document.body so it gets appended to the body tag in my app
 // and then I use react dom to render this.props.children to that new div (this.modalTarget)
 // this.props.children is a reference to any components that get passed into my component
+

@@ -20,9 +20,9 @@ export default class Cuisine extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div onSubmit={this.handleSubmit}>
           <select value={this.state.value} onChange={this.handleChange}>
-            <option selected value="select one">select one</option>
+            <option defaultValue="select one">select one</option>
             <option value="american">American</option>
             <option value="bagels">Bagels</option>
             <option value="bakery">Bakery</option>
@@ -52,7 +52,7 @@ export default class Cuisine extends React.Component {
             <option value="thai">Thai</option>
             <option value="vegan">Vegan</option>
           </select>
-      </form>
+      </div>
     );
   }
 }

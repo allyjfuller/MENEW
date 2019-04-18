@@ -27,20 +27,8 @@ export default class Checkbox extends React.Component {
     }
 
     render() {
-        let error;
-        if (this.props.meta.touched && this.props.meta.error) {
-            error = <div className="form-error">{this.props.meta.error}</div>;
-        }
-
-        let warning;
-        if (this.props.meta.touched && this.props.meta.warning) {
-            warning = (
-                <div className="form-warning">{this.props.meta.warning}</div>
-            );
-        }
-
         return (
-            <form>
+            <div>
                 <label>
                 Bar
                     <input
@@ -58,7 +46,7 @@ export default class Checkbox extends React.Component {
                     checked={this.state.restaurant}
                     onChange={this.handleInputChange} />
                 </label>
-      </form>
-    );
+            </div>
+        );
     }
 }

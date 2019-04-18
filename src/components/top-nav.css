@@ -1,0 +1,44 @@
+img.logo {
+
+	display: block;
+	margin-top: 2em;
+	margin-bottom: 1.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+ul {
+
+  	list-style-type: none;
+  	overflow: hidden;
+  	text-align: center;
+  
+}
+
+li {
+
+	display: inline-block;
+	border-right: 1px solid #fff;
+}
+
+.about, .login, .register, .contact {
+
+	display: block;
+	margin: 0 1em;
+	padding: 5px;
+	text-decoration: none;
+	color: #fff;
+	font-family: 'Muli', sans-serif;
+	font-size: 18px;
+
+}
+
+li:last-child {
+
+	border-right: none;
+}
+
+li a:hover {
+  
+  color: red;
+}
