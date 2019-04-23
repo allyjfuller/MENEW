@@ -26,7 +26,7 @@ export class RegistrationForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 <label>I am a:</label>
-                <Field component={Checkbox} type="checkbox" name="establishmentType" validate={[required, nonEmpty]} />
+                <Field component={Checkbox} type="checkbox" name="establishmentType" />
                 <label htmlFor="establishmentName">Name of establishment</label>
                 <Field component={Input} type="text" name="establishmentName" />
                 <label htmlFor="cuisine">Cuisine</label>

@@ -10,6 +10,9 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
+        <div>
+
+        </div>
         </div>
     );
 }
