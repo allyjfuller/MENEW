@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import HeaderBar from './header-bar';
 import TopNav from './top-nav';
+import Dashboard from './dashboard';
 import { refreshAuthToken } from '../actions/auth';
 
 export class App extends React.Component {
@@ -40,6 +41,7 @@ export class App extends React.Component {
             <div className="app">
                 <HeaderBar />
                 <TopNav />
+                <Dashboard />
             </div>
         );
     }

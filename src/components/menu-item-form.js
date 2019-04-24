@@ -1,37 +1,50 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import Input from './input';
-import Description from './description';
-import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
-const descriptionLength = length({min: 5, max: 120});
 
+class MenuItemForm extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { value: '' };
 
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
 
-export class MenuItemForm extends React.Component {
-	onSubmit(values) {
-		const {itemName, price, description} = values;
+	handleChange(event) {
+		this.setState({value: event.target.value});
+	}
+
+	handleSubmit(event) {
+		alert('An item was submitted: ' + this.state.value);
+		event.preventDefault();
 	}
 
 	render() {
-		return (
-			<form 
-				className="menu-item-form"
-				onSubmit={this.props.handleSubmit(values =>
-					this.onSubmit(values)
-				)}>
-				<Field component={Input} type="text" name="item-name" placeholder="Item Name" validate={[required, nonEmpty]} />
-				<Field component={Input} type="text" name="item-price" placeholder="Price" validate={[required, nonEmpty]} />
-				<input type="file" id="input" />
-				<Field component={Description} type="text" name="item-description" validate={[required, descriptionLength, isTrimmed]} />
-				<button> + </button>
-				<button>Done</button>
+		return(
+			<form onSubmit={this.handleSubmit}>
+				<label>
+					Item Name:
+					<br />
+					<input type="text" value={this.state.value} onChange={this.handleChange} />
+				</label>
+				<br />
+				<label>
+					Price:
+					<br />
+					<input type="number" value={this.state.value} onChange={this.handleChange} />
+				</label>
+				<br />
+				<input type="file" />
+				<br />
+				<label>
+				Description:
+					<br />
+					<textarea value={this.state.value} onChange={this.handleChange} />
+				</label>
+				<br />
+				<input type="submit" value="Submit" />
 			</form>
 		);
 	}
 }
 
-export default reduxForm({
-    form: 'menu-item',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('menu-item', Object.keys(errors)[0]))
-})(MenuItemForm);
+export default MenuItemForm

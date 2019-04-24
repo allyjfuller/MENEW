@@ -1,5 +1,7 @@
 import React from 'react';
 
+const descriptionLength = length({min: 5, max: 120});
+
 class Description extends React.Component {
   constructor(props) {
     super(props);
@@ -25,6 +27,7 @@ class Description extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Description
+          <br />
           <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />

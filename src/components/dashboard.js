@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import MenuItemPage from './menu-item-page';
 import {fetchProtectedData} from '../actions/protected-data';
-import MenuItemForm from './menu-item-form';
 import './dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -12,27 +13,21 @@ export class Dashboard extends React.Component {
 
     render() {
         return (
-            <div className="dashboard">
-                <div className="dashboard-name">{this.props.name}</div>
-                <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
-                <div>
-                    Add new menu item:
-                    <MenuItemForm />
-                </div>
+            <Router>
+                <div className="dashboard">
+                
+                <button><Link to="/menu-item-page" className="menu-item-page"> + </Link></button>
+                <Route exact path="/menu-item-page" component={ MenuItemPage } />
 
                 </div>
-            </div>
+            </Router>
         );
     }
 }
 
 const mapStateToProps = state => {
-    const {currentUser} = state.auth;
     return {
-        email: state.auth.currentUser.email,
-        name: `${currentUser.establishment.name}`,
-        protectedData: state.protectedData.data
+        
     };
 };
 
