@@ -34,7 +34,6 @@ export function TopNav(props) {
 <Route path="/about" component={ About } />
 <Route path="/register" component={ RegistrationPage } />
 <Route path="/login" component={ LoginPage } />
-<Route path="/contact" component={ Contact } />
 </Router>
 
 
